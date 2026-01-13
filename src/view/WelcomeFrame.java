@@ -43,6 +43,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
         signupHere = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nepal Aerospace - Rocket Trajectory Simulator");
 
         brandingPanel.setBackground(new java.awt.Color(11, 19, 43));
 
