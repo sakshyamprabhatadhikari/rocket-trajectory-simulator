@@ -28,19 +28,165 @@ public class WelcomeFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainSplitPane = new javax.swing.JSplitPane();
+        brandingPanel = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        loginPanel = new javax.swing.JPanel();
+        loginTitle = new javax.swing.JLabel();
+        instructions = new javax.swing.JLabel();
+        email = new javax.swing.JLabel();
+        emailTextField = new javax.swing.JTextField();
+        password = new javax.swing.JLabel();
+        passwordTextField = new javax.swing.JTextField();
+        forgotPassword = new javax.swing.JButton();
+        login = new javax.swing.JButton();
+        dontHave = new javax.swing.JLabel();
+        signupHere = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nepal Aerospace | Rocket Trajectory Simulator ");
-        setMinimumSize(new java.awt.Dimension(900, 500));
-        setPreferredSize(new java.awt.Dimension(900, 500));
-        setResizable(false);
 
-        mainSplitPane.setResizeWeight(0.5);
-        getContentPane().add(mainSplitPane, java.awt.BorderLayout.CENTER);
+        brandingPanel.setBackground(new java.awt.Color(11, 19, 43));
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nepal_aerosoace_logo.png"))); // NOI18N
+        lblLogo.setText("jLabel2");
+
+        javax.swing.GroupLayout brandingPanelLayout = new javax.swing.GroupLayout(brandingPanel);
+        brandingPanel.setLayout(brandingPanelLayout);
+        brandingPanelLayout.setHorizontalGroup(
+            brandingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(brandingPanelLayout.createSequentialGroup()
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        brandingPanelLayout.setVerticalGroup(
+            brandingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        loginPanel.setBackground(new java.awt.Color(15, 15, 20));
+
+        loginTitle.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        loginTitle.setForeground(new java.awt.Color(244, 196, 48));
+        loginTitle.setText("Sign into Nepal Aerospace Rocket Trajectory Simulator");
+
+        instructions.setForeground(new java.awt.Color(200, 200, 200));
+        instructions.setText("Please enter your login details below using this app");
+
+        email.setForeground(new java.awt.Color(244, 196, 48));
+        email.setText("Email");
+
+        password.setForeground(new java.awt.Color(244, 196, 48));
+        password.setText("Password");
+
+        passwordTextField.addActionListener(this::passwordTextFieldActionPerformed);
+
+        forgotPassword.setForeground(new java.awt.Color(77, 166, 255));
+        forgotPassword.setText("Forgot your password?");
+        forgotPassword.setBorderPainted(false);
+        forgotPassword.setContentAreaFilled(false);
+        forgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        forgotPassword.addActionListener(this::forgotPasswordActionPerformed);
+
+        login.setBackground(new java.awt.Color(244, 196, 48));
+        login.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        login.setText("Login");
+        login.setBorderPainted(false);
+        login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        login.setFocusPainted(false);
+
+        dontHave.setForeground(new java.awt.Color(180, 180, 180));
+        dontHave.setText("Don't have an account?");
+
+        signupHere.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        signupHere.setForeground(new java.awt.Color(77, 166, 255));
+        signupHere.setText("Sign up here");
+        signupHere.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(loginTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(password)
+                    .addComponent(email))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                        .addComponent(passwordTextField))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(forgotPassword))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addComponent(dontHave)
+                        .addGap(56, 56, 56)
+                        .addComponent(signupHere, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
+                        .addComponent(instructions)
+                        .addGap(249, 249, 249))))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(loginTitle)
+                .addGap(18, 18, 18)
+                .addComponent(instructions)
+                .addGap(38, 38, 38)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(email)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(password)
+                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(forgotPassword)
+                .addGap(34, 34, 34)
+                .addComponent(login)
+                .addGap(43, 43, 43)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dontHave)
+                    .addComponent(signupHere))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(brandingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(brandingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(loginPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextFieldActionPerformed
+
+    private void forgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_forgotPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,6 +214,18 @@ public class WelcomeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSplitPane mainSplitPane;
+    private javax.swing.JPanel brandingPanel;
+    private javax.swing.JLabel dontHave;
+    private javax.swing.JLabel email;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JButton forgotPassword;
+    private javax.swing.JLabel instructions;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JButton login;
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JLabel loginTitle;
+    private javax.swing.JLabel password;
+    private javax.swing.JTextField passwordTextField;
+    private javax.swing.JLabel signupHere;
     // End of variables declaration//GEN-END:variables
 }
