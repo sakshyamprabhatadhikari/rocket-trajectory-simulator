@@ -47,7 +47,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         brandingPanel.setBackground(new java.awt.Color(11, 19, 43));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nepal_aerosoace_logo.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nepal_aerospace_logo.png"))); // NOI18N
         lblLogo.setText("jLabel2");
 
         javax.swing.GroupLayout brandingPanelLayout = new javax.swing.GroupLayout(brandingPanel);
