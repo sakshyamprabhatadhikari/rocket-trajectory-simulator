@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.AuthController;
 
 /**
  *
@@ -93,6 +94,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
         login.setBorderPainted(false);
         login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         login.setFocusPainted(false);
+        login.addActionListener(this::loginActionPerformed);
 
         dontHave.setForeground(new java.awt.Color(180, 180, 180));
         dontHave.setText("Don't have an account?");
@@ -101,6 +103,11 @@ public class WelcomeFrame extends javax.swing.JFrame {
         signupHere.setForeground(new java.awt.Color(77, 166, 255));
         signupHere.setText("Sign up here");
         signupHere.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        signupHere.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signupHereMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -186,8 +193,38 @@ public class WelcomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordTextFieldActionPerformed
 
     private void forgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordActionPerformed
-        // TODO add your handling code here:
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Password recovery feature will be available in a future version.");
     }//GEN-LAST:event_forgotPasswordActionPerformed
+
+    private void signupHereMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupHereMouseClicked
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Password recovery feature will be available in a future version.");
+    }//GEN-LAST:event_signupHereMouseClicked
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        String emailInput = emailTextField.getText();
+        String passwordInput = passwordTextField.getText();
+
+        AuthController authController = new AuthController();
+
+if (authController.login(emailInput, passwordInput)) {
+    javax.swing.JOptionPane.showMessageDialog(
+        this,
+        "Login successful!",
+        "Success",
+        javax.swing.JOptionPane.INFORMATION_MESSAGE
+    );
+} else {
+    javax.swing.JOptionPane.showMessageDialog(
+        this,
+        "Invalid email or password",
+        "Login Failed",
+        javax.swing.JOptionPane.ERROR_MESSAGE
+    );
+}
+
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments
