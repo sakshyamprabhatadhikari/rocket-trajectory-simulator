@@ -1,34 +1,84 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author saksh
- */
 public class Rocket {
-
-    private String name;
+    private String rocketID;
+    private String rocketName;
+    private String country;
+    private double mass;
+    private double thrust;
+    private String status;     // Active, Inactive, Testing
     private int launchYear;
-    private String rocketType;
 
-    public Rocket(String name, int launchYear, String rocketType) {
-        this.name = name;
+    public Rocket(String rocketID, String rocketName, String country, double mass, double thrust, String status, int launchYear) {
+        this.rocketID = rocketID;
+        this.rocketName = rocketName;
+        this.country = country;
+        this.mass = mass;
+        this.thrust = thrust;
+        this.status = status;
         this.launchYear = launchYear;
-        this.rocketType = rocketType;
     }
 
-    public String getName() {
-        return name;
+    // Getters
+    public String getRocketID() {
+        return rocketID;
+    }
+
+    public String getRocketName() {
+        return rocketName;
+    }
+    
+    public String getCountry() {
+    return country;
+    }
+
+    public double getMass() {
+        return mass;
+    }
+
+    public double getThrust() {
+        return thrust;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public int getLaunchYear() {
         return launchYear;
     }
 
-    public String getRocketType() {
-        return rocketType;
+    // Setters
+    public void setRocketID(String rocketID) {
+        this.rocketID = rocketID;
+    }
+
+    public void setRocketName(String rocketName) {
+        this.rocketName = rocketName;
+    }
+    
+    public void setCountry(String country) {
+    this.country = country;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
+    public void setThrust(double thrust) {
+        this.thrust = thrust;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setLaunchYear(int launchYear) {
+        this.launchYear = launchYear;
+    }
+
+    @Override
+    public String toString() {
+        return rocketName + " (" + launchYear + ") - " + status;
     }
 }
