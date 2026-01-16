@@ -17,6 +17,9 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
      */
     public AdminDashboardFrame() {
         initComponents();
+        tblRockets.setFillsViewportHeight(true);
+        scrollRockets.getViewport().setBackground(new java.awt.Color(0, 0, 0));
+
     }
 
     /**
@@ -34,8 +37,60 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         lblMainScreenTitle = new javax.swing.JLabel();
         tabPaneMain = new javax.swing.JTabbedPane();
         pnlTabHome = new javax.swing.JPanel();
+        lblWelcome = new javax.swing.JLabel();
+        pnlRecent = new javax.swing.JPanel();
+        lblRecent1 = new javax.swing.JLabel();
+        lblRecent2 = new javax.swing.JLabel();
+        lblRecent3 = new javax.swing.JLabel();
+        lblRecent4 = new javax.swing.JLabel();
+        lblRecent5 = new javax.swing.JLabel();
+        pnlStats = new javax.swing.JPanel();
+        lbltotalRocketsTitle = new javax.swing.JLabel();
+        lblRecentCountTitle = new javax.swing.JLabel();
+        lblActiveCountTitle = new javax.swing.JLabel();
+        lblInactiveCountTitle = new javax.swing.JLabel();
+        lblTestingCountTitle = new javax.swing.JLabel();
+        lblTotalRocketsValue = new javax.swing.JLabel();
+        lblRecentCountValue = new javax.swing.JLabel();
+        lblActiveCountValue = new javax.swing.JLabel();
+        lblInactiveCountValue = new javax.swing.JLabel();
+        lblTestingCountValue = new javax.swing.JLabel();
         pnlTabRocketList = new javax.swing.JPanel();
+        lblRocketListTitle = new javax.swing.JLabel();
+        scrollRockets = new javax.swing.JScrollPane();
+        tblRockets = new javax.swing.JTable();
+        pnlSearch = new javax.swing.JPanel();
+        cmbSearchCriteria = new javax.swing.JComboBox<>();
+        txtSearch = new javax.swing.JTextField();
+        btnBinarySearch = new javax.swing.JButton();
+        btnPartialSearch = new javax.swing.JButton();
+        btnResetSearch = new javax.swing.JButton();
+        pnlSort = new javax.swing.JPanel();
+        lblSortByYear = new javax.swing.JLabel();
+        btnSortAsc = new javax.swing.JButton();
+        btnSortDesc = new javax.swing.JButton();
         pnlTabAdminControl = new javax.swing.JPanel();
+        rocketAdminPanel = new javax.swing.JLabel();
+        pnlRocketForm = new javax.swing.JPanel();
+        rocketID = new javax.swing.JLabel();
+        txtRocketID = new javax.swing.JTextField();
+        rocketName = new javax.swing.JLabel();
+        txtRocketName = new javax.swing.JTextField();
+        thrust = new javax.swing.JLabel();
+        txtThrust = new javax.swing.JTextField();
+        status = new javax.swing.JLabel();
+        launchYear = new javax.swing.JLabel();
+        txtLaunchYear = new javax.swing.JTextField();
+        country = new javax.swing.JLabel();
+        txtCountry = new javax.swing.JTextField();
+        mass = new javax.swing.JLabel();
+        cmbStatus = new javax.swing.JComboBox<>();
+        txtMass = new javax.swing.JTextField();
+        pnlAdminActions = new javax.swing.JPanel();
+        btnAddRocket = new javax.swing.JButton();
+        btnUpdateRocket = new javax.swing.JButton();
+        btnDeleteRocket = new javax.swing.JButton();
+        btnClearForm = new javax.swing.JButton();
         pnlTabAboutUs = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,7 +107,7 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         lblMainScreenLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nepal_aerospace_logo_small.png"))); // NOI18N
 
         lblMainScreenTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblMainScreenTitle.setText("Empowering Aerospace, Simplying Simulation");
+        lblMainScreenTitle.setText("Empowering Aerospace, Simplifying Simulation");
         lblMainScreenTitle.setToolTipText("");
 
         javax.swing.GroupLayout pnlMainScreenTitleBarLayout = new javax.swing.GroupLayout(pnlMainScreenTitleBar);
@@ -85,45 +140,600 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         pnlTabHome.setToolTipText("");
         pnlTabHome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(254, 196, 24));
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setText("Welcome to Nepal Aerospace Rocket Trajectory Simulator");
+
+        pnlRecent.setBackground(new java.awt.Color(17, 17, 17));
+        pnlRecent.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Recently Added Rockets (Last 5)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        lblRecent1.setBackground(new java.awt.Color(0, 0, 0));
+        lblRecent1.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecent1.setText("-");
+        lblRecent1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+        lblRecent1.setPreferredSize(new java.awt.Dimension(63, 18));
+
+        lblRecent2.setBackground(new java.awt.Color(0, 0, 0));
+        lblRecent2.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecent2.setText("-");
+        lblRecent2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+        lblRecent2.setPreferredSize(new java.awt.Dimension(63, 18));
+
+        lblRecent3.setBackground(new java.awt.Color(0, 0, 0));
+        lblRecent3.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecent3.setText("-");
+        lblRecent3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+        lblRecent3.setPreferredSize(new java.awt.Dimension(63, 18));
+
+        lblRecent4.setBackground(new java.awt.Color(0, 0, 0));
+        lblRecent4.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecent4.setText("-");
+        lblRecent4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+        lblRecent4.setPreferredSize(new java.awt.Dimension(63, 18));
+
+        lblRecent5.setBackground(new java.awt.Color(0, 0, 0));
+        lblRecent5.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecent5.setText("-");
+        lblRecent5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+        lblRecent5.setPreferredSize(new java.awt.Dimension(63, 18));
+
+        javax.swing.GroupLayout pnlRecentLayout = new javax.swing.GroupLayout(pnlRecent);
+        pnlRecent.setLayout(pnlRecentLayout);
+        pnlRecentLayout.setHorizontalGroup(
+            pnlRecentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRecentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlRecentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblRecent1, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                    .addComponent(lblRecent2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRecent3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRecent4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRecent5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        pnlRecentLayout.setVerticalGroup(
+            pnlRecentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRecentLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblRecent1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRecent2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRecent3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRecent4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRecent5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        pnlStats.setBackground(new java.awt.Color(17, 17, 17));
+        pnlStats.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rocket Statistics", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        lbltotalRocketsTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbltotalRocketsTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lbltotalRocketsTitle.setText("Total Rockets:");
+
+        lblRecentCountTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblRecentCountTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblRecentCountTitle.setText("Recently Added Rockets:");
+
+        lblActiveCountTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblActiveCountTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblActiveCountTitle.setText("Active Rockets: ");
+
+        lblInactiveCountTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblInactiveCountTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblInactiveCountTitle.setText("Inactive Rockets:");
+
+        lblTestingCountTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTestingCountTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTestingCountTitle.setText("Testing Rockets :");
+
+        lblTotalRocketsValue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTotalRocketsValue.setForeground(new java.awt.Color(241, 196, 15));
+        lblTotalRocketsValue.setText("0");
+
+        lblRecentCountValue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblRecentCountValue.setForeground(new java.awt.Color(241, 196, 15));
+        lblRecentCountValue.setText("0");
+
+        lblActiveCountValue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblActiveCountValue.setForeground(new java.awt.Color(241, 196, 15));
+        lblActiveCountValue.setText("0");
+
+        lblInactiveCountValue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblInactiveCountValue.setForeground(new java.awt.Color(241, 196, 15));
+        lblInactiveCountValue.setText("0");
+
+        lblTestingCountValue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTestingCountValue.setForeground(new java.awt.Color(241, 196, 15));
+        lblTestingCountValue.setText("0");
+
+        javax.swing.GroupLayout pnlStatsLayout = new javax.swing.GroupLayout(pnlStats);
+        pnlStats.setLayout(pnlStatsLayout);
+        pnlStatsLayout.setHorizontalGroup(
+            pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStatsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlStatsLayout.createSequentialGroup()
+                        .addComponent(lbltotalRocketsTitle)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTotalRocketsValue))
+                    .addGroup(pnlStatsLayout.createSequentialGroup()
+                        .addComponent(lblRecentCountTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblRecentCountValue))
+                    .addGroup(pnlStatsLayout.createSequentialGroup()
+                        .addComponent(lblActiveCountTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblActiveCountValue))
+                    .addGroup(pnlStatsLayout.createSequentialGroup()
+                        .addComponent(lblInactiveCountTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblInactiveCountValue))
+                    .addGroup(pnlStatsLayout.createSequentialGroup()
+                        .addComponent(lblTestingCountTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTestingCountValue)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        pnlStatsLayout.setVerticalGroup(
+            pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlStatsLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbltotalRocketsTitle)
+                    .addComponent(lblTotalRocketsValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRecentCountTitle)
+                    .addComponent(lblRecentCountValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblActiveCountTitle)
+                    .addComponent(lblActiveCountValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInactiveCountTitle)
+                    .addComponent(lblInactiveCountValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTestingCountTitle)
+                    .addComponent(lblTestingCountValue))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pnlTabHomeLayout = new javax.swing.GroupLayout(pnlTabHome);
         pnlTabHome.setLayout(pnlTabHomeLayout);
         pnlTabHomeLayout.setHorizontalGroup(
             pnlTabHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(pnlTabHomeLayout.createSequentialGroup()
+                .addGroup(pnlTabHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTabHomeLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(lblWelcome))
+                    .addGroup(pnlTabHomeLayout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(pnlRecent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102)
+                        .addComponent(pnlStats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         pnlTabHomeLayout.setVerticalGroup(
             pnlTabHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGroup(pnlTabHomeLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(lblWelcome)
+                .addGap(33, 33, 33)
+                .addGroup(pnlTabHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlStats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlRecent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 340, Short.MAX_VALUE))
         );
 
         tabPaneMain.addTab("Home", pnlTabHome);
 
         pnlTabRocketList.setBackground(new java.awt.Color(0, 0, 0));
 
+        lblRocketListTitle.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        lblRocketListTitle.setForeground(new java.awt.Color(245, 196, 24));
+        lblRocketListTitle.setText("Rocket Inventory List");
+
+        scrollRockets.setBackground(new java.awt.Color(0, 0, 0));
+        scrollRockets.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60)));
+
+        tblRockets.setBackground(new java.awt.Color(11, 11, 11));
+        tblRockets.setForeground(new java.awt.Color(255, 255, 255));
+        tblRockets.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Rocket ID", "Rocket Name", "Country", "Mass (kg)", "Thrust (kN)", "Status", "Launch Year"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tblRockets.setToolTipText("");
+        tblRockets.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblRockets.setGridColor(new java.awt.Color(60, 60, 60));
+        tblRockets.setRowHeight(28);
+        tblRockets.setSelectionBackground(new java.awt.Color(241, 196, 15));
+        tblRockets.setShowGrid(true);
+        scrollRockets.setViewportView(tblRockets);
+        if (tblRockets.getColumnModel().getColumnCount() > 0) {
+            tblRockets.getColumnModel().getColumn(0).setResizable(false);
+            tblRockets.getColumnModel().getColumn(0).setPreferredWidth(70);
+            tblRockets.getColumnModel().getColumn(1).setResizable(false);
+            tblRockets.getColumnModel().getColumn(1).setPreferredWidth(85);
+            tblRockets.getColumnModel().getColumn(2).setResizable(false);
+            tblRockets.getColumnModel().getColumn(2).setPreferredWidth(85);
+            tblRockets.getColumnModel().getColumn(3).setResizable(false);
+            tblRockets.getColumnModel().getColumn(3).setPreferredWidth(65);
+            tblRockets.getColumnModel().getColumn(4).setResizable(false);
+            tblRockets.getColumnModel().getColumn(4).setPreferredWidth(75);
+            tblRockets.getColumnModel().getColumn(5).setResizable(false);
+            tblRockets.getColumnModel().getColumn(5).setPreferredWidth(55);
+            tblRockets.getColumnModel().getColumn(6).setResizable(false);
+            tblRockets.getColumnModel().getColumn(6).setPreferredWidth(80);
+        }
+
+        pnlSearch.setBackground(new java.awt.Color(17, 17, 17));
+        pnlSearch.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        cmbSearchCriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rocket Name", "Country", "Launch Year" }));
+        cmbSearchCriteria.addActionListener(this::cmbSearchCriteriaActionPerformed);
+
+        txtSearch.setColumns(20);
+        txtSearch.addActionListener(this::txtSearchActionPerformed);
+
+        btnBinarySearch.setBackground(new java.awt.Color(241, 196, 15));
+        btnBinarySearch.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBinarySearch.setText("Binary Search");
+        btnBinarySearch.setBorderPainted(false);
+        btnBinarySearch.setFocusPainted(false);
+
+        btnPartialSearch.setBackground(new java.awt.Color(241, 196, 15));
+        btnPartialSearch.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnPartialSearch.setText("Partial Search");
+        btnPartialSearch.setBorderPainted(false);
+        btnPartialSearch.setFocusPainted(false);
+
+        btnResetSearch.setBackground(new java.awt.Color(68, 68, 68));
+        btnResetSearch.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnResetSearch.setForeground(new java.awt.Color(255, 255, 255));
+        btnResetSearch.setText("Reset");
+        btnResetSearch.setBorderPainted(false);
+        btnResetSearch.setFocusPainted(false);
+
+        javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
+        pnlSearch.setLayout(pnlSearchLayout);
+        pnlSearchLayout.setHorizontalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBinarySearch)
+                            .addComponent(btnPartialSearch)
+                            .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(cmbSearchCriteria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnResetSearch)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        pnlSearchLayout.setVerticalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(cmbSearchCriteria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBinarySearch)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPartialSearch)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnResetSearch)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        pnlSort.setBackground(new java.awt.Color(17, 17, 17));
+        pnlSort.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        lblSortByYear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSortByYear.setForeground(new java.awt.Color(255, 255, 255));
+        lblSortByYear.setText("Sort by Launch Year");
+
+        btnSortAsc.setBackground(new java.awt.Color(241, 196, 15));
+        btnSortAsc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSortAsc.setText("Ascending");
+        btnSortAsc.setBorderPainted(false);
+        btnSortAsc.setFocusPainted(false);
+        btnSortAsc.addActionListener(this::btnSortAscActionPerformed);
+
+        btnSortDesc.setBackground(new java.awt.Color(241, 196, 15));
+        btnSortDesc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSortDesc.setText("Descending");
+        btnSortDesc.setBorderPainted(false);
+        btnSortDesc.setFocusPainted(false);
+
+        javax.swing.GroupLayout pnlSortLayout = new javax.swing.GroupLayout(pnlSort);
+        pnlSort.setLayout(pnlSortLayout);
+        pnlSortLayout.setHorizontalGroup(
+            pnlSortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSortLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(pnlSortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSortDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSortAsc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSortLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(lblSortByYear)
+                .addGap(14, 14, 14))
+        );
+        pnlSortLayout.setVerticalGroup(
+            pnlSortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSortLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblSortByYear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSortAsc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSortDesc)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pnlTabRocketListLayout = new javax.swing.GroupLayout(pnlTabRocketList);
         pnlTabRocketList.setLayout(pnlTabRocketListLayout);
         pnlTabRocketListLayout.setHorizontalGroup(
             pnlTabRocketListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(pnlTabRocketListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlSort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlTabRocketListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(lblRocketListTitle))
+                    .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(scrollRockets, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         pnlTabRocketListLayout.setVerticalGroup(
             pnlTabRocketListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                .addGroup(pnlTabRocketListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                        .addComponent(lblRocketListTitle)
+                        .addGap(25, 25, 25)
+                        .addComponent(scrollRockets, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlTabRocketListLayout.createSequentialGroup()
+                        .addComponent(pnlSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pnlSort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         tabPaneMain.addTab("Rocket List", pnlTabRocketList);
 
         pnlTabAdminControl.setBackground(new java.awt.Color(0, 0, 0));
 
+        rocketAdminPanel.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        rocketAdminPanel.setForeground(new java.awt.Color(254, 196, 24));
+        rocketAdminPanel.setText("Rocket Administration Panel");
+        rocketAdminPanel.setToolTipText("");
+
+        pnlRocketForm.setBackground(new java.awt.Color(17, 17, 17));
+        pnlRocketForm.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rocket Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        rocketID.setForeground(new java.awt.Color(255, 255, 255));
+        rocketID.setText("Rocket ID");
+
+        txtRocketID.addActionListener(this::txtRocketIDActionPerformed);
+
+        rocketName.setForeground(new java.awt.Color(255, 255, 255));
+        rocketName.setText("Rocket Name");
+
+        txtRocketName.addActionListener(this::txtRocketNameActionPerformed);
+
+        thrust.setForeground(new java.awt.Color(255, 255, 255));
+        thrust.setText("Thrust (kN)");
+
+        txtThrust.addActionListener(this::txtThrustActionPerformed);
+
+        status.setForeground(new java.awt.Color(255, 255, 255));
+        status.setText("Status");
+
+        launchYear.setForeground(new java.awt.Color(255, 255, 255));
+        launchYear.setText("Launch Year");
+
+        country.setForeground(new java.awt.Color(255, 255, 255));
+        country.setText("Country");
+
+        mass.setForeground(new java.awt.Color(255, 255, 255));
+        mass.setText("Mass (kg)");
+
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive", "Testing" }));
+
+        txtMass.addActionListener(this::txtMassActionPerformed);
+
+        javax.swing.GroupLayout pnlRocketFormLayout = new javax.swing.GroupLayout(pnlRocketForm);
+        pnlRocketForm.setLayout(pnlRocketFormLayout);
+        pnlRocketFormLayout.setHorizontalGroup(
+            pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRocketFormLayout.createSequentialGroup()
+                        .addComponent(rocketID)
+                        .addGap(32, 32, 32))
+                    .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                                .addComponent(mass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(launchYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                        .addComponent(status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(country, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(rocketName))
+                                    .addComponent(thrust, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)))))
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                        .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtLaunchYear, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtRocketID)
+                            .addComponent(txtRocketName)
+                            .addComponent(txtThrust)
+                            .addComponent(txtCountry)
+                            .addComponent(cmbStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtMass))
+                .addContainerGap())
+        );
+        pnlRocketFormLayout.setVerticalGroup(
+            pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRocketFormLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rocketID)
+                    .addComponent(txtRocketID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rocketName)
+                    .addComponent(txtRocketName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(country)
+                    .addComponent(txtCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mass))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(thrust)
+                    .addComponent(txtThrust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(status)
+                    .addComponent(cmbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlRocketFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(launchYear)
+                    .addComponent(txtLaunchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlAdminActions.setBackground(new java.awt.Color(17, 17, 17));
+        pnlAdminActions.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Admin Actions", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(241, 196, 15))); // NOI18N
+
+        btnAddRocket.setBackground(new java.awt.Color(241, 196, 15));
+        btnAddRocket.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAddRocket.setText("Add");
+        btnAddRocket.setBorderPainted(false);
+        btnAddRocket.setFocusPainted(false);
+        btnAddRocket.addActionListener(this::btnAddRocketActionPerformed);
+
+        btnUpdateRocket.setBackground(new java.awt.Color(241, 196, 15));
+        btnUpdateRocket.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUpdateRocket.setText("Update");
+        btnUpdateRocket.setBorderPainted(false);
+        btnUpdateRocket.setFocusPainted(false);
+        btnUpdateRocket.addActionListener(this::btnUpdateRocketActionPerformed);
+
+        btnDeleteRocket.setBackground(new java.awt.Color(241, 196, 15));
+        btnDeleteRocket.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnDeleteRocket.setText("Delete");
+        btnDeleteRocket.setBorderPainted(false);
+        btnDeleteRocket.setFocusPainted(false);
+        btnDeleteRocket.addActionListener(this::btnDeleteRocketActionPerformed);
+
+        btnClearForm.setBackground(new java.awt.Color(68, 68, 68));
+        btnClearForm.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClearForm.setForeground(new java.awt.Color(255, 255, 255));
+        btnClearForm.setText("Clear");
+        btnClearForm.setBorderPainted(false);
+        btnClearForm.setFocusPainted(false);
+        btnClearForm.addActionListener(this::btnClearFormActionPerformed);
+
+        javax.swing.GroupLayout pnlAdminActionsLayout = new javax.swing.GroupLayout(pnlAdminActions);
+        pnlAdminActions.setLayout(pnlAdminActionsLayout);
+        pnlAdminActionsLayout.setHorizontalGroup(
+            pnlAdminActionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAdminActionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAddRocket)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnUpdateRocket)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDeleteRocket)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnClearForm)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlAdminActionsLayout.setVerticalGroup(
+            pnlAdminActionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAdminActionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlAdminActionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddRocket)
+                    .addComponent(btnUpdateRocket)
+                    .addComponent(btnDeleteRocket)
+                    .addComponent(btnClearForm))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pnlTabAdminControlLayout = new javax.swing.GroupLayout(pnlTabAdminControl);
         pnlTabAdminControl.setLayout(pnlTabAdminControlLayout);
         pnlTabAdminControlLayout.setHorizontalGroup(
             pnlTabAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(pnlTabAdminControlLayout.createSequentialGroup()
+                .addGroup(pnlTabAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlTabAdminControlLayout.createSequentialGroup()
+                        .addGap(358, 358, 358)
+                        .addComponent(pnlAdminActions, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlTabAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTabAdminControlLayout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlRocketForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlTabAdminControlLayout.createSequentialGroup()
+                            .addGap(299, 299, 299)
+                            .addComponent(rocketAdminPanel))))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         pnlTabAdminControlLayout.setVerticalGroup(
             pnlTabAdminControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGroup(pnlTabAdminControlLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(rocketAdminPanel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlRocketForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addComponent(pnlAdminActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         tabPaneMain.addTab("Admin Control", pnlTabAdminControl);
@@ -134,11 +744,11 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         pnlTabAboutUs.setLayout(pnlTabAboutUsLayout);
         pnlTabAboutUsLayout.setHorizontalGroup(
             pnlTabAboutUsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 940, Short.MAX_VALUE)
         );
         pnlTabAboutUsLayout.setVerticalGroup(
             pnlTabAboutUsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGap(0, 656, Short.MAX_VALUE)
         );
 
         tabPaneMain.addTab("About Us", pnlTabAboutUs);
@@ -172,6 +782,50 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbSearchCriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSearchCriteriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbSearchCriteriaActionPerformed
+
+    private void btnSortAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortAscActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSortAscActionPerformed
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void txtRocketIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRocketIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRocketIDActionPerformed
+
+    private void txtRocketNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRocketNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRocketNameActionPerformed
+
+    private void txtMassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMassActionPerformed
+
+    private void txtThrustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThrustActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThrustActionPerformed
+
+    private void btnAddRocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRocketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddRocketActionPerformed
+
+    private void btnUpdateRocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRocketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateRocketActionPerformed
+
+    private void btnDeleteRocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRocketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteRocketActionPerformed
+
+    private void btnClearFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearFormActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearFormActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -196,16 +850,157 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new AdminDashboardFrame().setVisible(true));
     }
+ 
+// ======================================================
+// MVC ACCESSORS (GETTERS) - SAFE CUSTOM CODE AREA
+// Controller will use these to read/update UI components.
+// No business logic here.
+// ======================================================
+
+
+// ======================= HOME TAB =======================
+
+// Recently Added Rockets (Last 5)
+public javax.swing.JLabel getLblRecent1() { return lblRecent1; }
+public javax.swing.JLabel getLblRecent2() { return lblRecent2; }
+public javax.swing.JLabel getLblRecent3() { return lblRecent3; }
+public javax.swing.JLabel getLblRecent4() { return lblRecent4; }
+public javax.swing.JLabel getLblRecent5() { return lblRecent5; }
+
+// Rocket Statistics (VALUE labels)
+public javax.swing.JLabel getLblTotalRocketsValue() { return lblTotalRocketsValue; }
+public javax.swing.JLabel getLblRecentCountValue() { return lblRecentCountValue; }
+public javax.swing.JLabel getLblActiveCountValue() { return lblActiveCountValue; }
+public javax.swing.JLabel getLblInactiveCountValue() { return lblInactiveCountValue; }
+public javax.swing.JLabel getLblTestingCountValue() { return lblTestingCountValue; }
+
+
+// ===================== ROCKET LIST TAB =====================
+
+// Table
+public javax.swing.JTable getTblRockets() { return tblRockets; }
+
+// Search controls
+public javax.swing.JComboBox getCmbSearchCriteria() { return cmbSearchCriteria; }
+public javax.swing.JTextField getTxtSearch() { return txtSearch; }
+
+// Search buttons
+public javax.swing.JButton getBtnBinarySearch() { return btnBinarySearch; }
+public javax.swing.JButton getBtnPartialSearch() { return btnPartialSearch; }
+public javax.swing.JButton getBtnResetSearch() { return btnResetSearch; }
+
+// Sort buttons
+public javax.swing.JButton getBtnSortAsc() { return btnSortAsc; }
+public javax.swing.JButton getBtnSortDesc() { return btnSortDesc; }
+
+
+// ===================== ADMIN CONTROL TAB =====================
+
+// Form fields
+public javax.swing.JTextField getTxtRocketID() { return txtRocketID; }
+public javax.swing.JTextField getTxtRocketName() { return txtRocketName; }
+public javax.swing.JTextField getTxtMass() { return txtMass; }
+public javax.swing.JTextField getTxtThrust() { return txtThrust; }
+public javax.swing.JComboBox getCmbStatus() { return cmbStatus; }
+public javax.swing.JTextField getTxtLaunchYear() { return txtLaunchYear; }
+public javax.swing.JTextField getTxtCountry() { return txtCountry;}
+
+
+// Admin action buttons
+public javax.swing.JButton getBtnAddRocket() { return btnAddRocket; }
+public javax.swing.JButton getBtnUpdateRocket() { return btnUpdateRocket; }
+public javax.swing.JButton getBtnDeleteRocket() { return btnDeleteRocket; }
+public javax.swing.JButton getBtnClearForm() { return btnClearForm; }
+
+
+// ================== OPTIONAL VIEW-ONLY HELPERS ==================
+// (These are NOT business logic; they just reset UI fields/labels safely.)
+
+public void clearAdminControlForm() {
+    txtRocketID.setText("");
+    txtRocketName.setText("");
+    txtMass.setText("");
+    txtThrust.setText("");
+    txtLaunchYear.setText("");
+    txtCountry.setText("");
+    if (cmbStatus.getItemCount() > 0) cmbStatus.setSelectedIndex(0);
+}
+
+public void resetHomeToDefault() {
+    lblRecent1.setText("-");
+    lblRecent2.setText("-");
+    lblRecent3.setText("-");
+    lblRecent4.setText("-");
+    lblRecent5.setText("-");
+
+    lblTotalRocketsValue.setText("0");
+    lblRecentCountValue.setText("0");
+    lblActiveCountValue.setText("0");
+    lblInactiveCountValue.setText("0");
+    lblTestingCountValue.setText("0");
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddRocket;
+    private javax.swing.JButton btnBinarySearch;
+    private javax.swing.JButton btnClearForm;
+    private javax.swing.JButton btnDeleteRocket;
+    private javax.swing.JButton btnPartialSearch;
+    private javax.swing.JButton btnResetSearch;
+    private javax.swing.JButton btnSortAsc;
+    private javax.swing.JButton btnSortDesc;
+    private javax.swing.JButton btnUpdateRocket;
+    private javax.swing.JComboBox<String> cmbSearchCriteria;
+    private javax.swing.JComboBox<String> cmbStatus;
+    private javax.swing.JLabel country;
+    private javax.swing.JLabel launchYear;
+    private javax.swing.JLabel lblActiveCountTitle;
+    private javax.swing.JLabel lblActiveCountValue;
+    private javax.swing.JLabel lblInactiveCountTitle;
+    private javax.swing.JLabel lblInactiveCountValue;
     private javax.swing.JLabel lblMainScreenLogo;
     private javax.swing.JLabel lblMainScreenTitle;
+    private javax.swing.JLabel lblRecent1;
+    private javax.swing.JLabel lblRecent2;
+    private javax.swing.JLabel lblRecent3;
+    private javax.swing.JLabel lblRecent4;
+    private javax.swing.JLabel lblRecent5;
+    private javax.swing.JLabel lblRecentCountTitle;
+    private javax.swing.JLabel lblRecentCountValue;
+    private javax.swing.JLabel lblRocketListTitle;
+    private javax.swing.JLabel lblSortByYear;
+    private javax.swing.JLabel lblTestingCountTitle;
+    private javax.swing.JLabel lblTestingCountValue;
+    private javax.swing.JLabel lblTotalRocketsValue;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JLabel lbltotalRocketsTitle;
+    private javax.swing.JLabel mass;
+    private javax.swing.JPanel pnlAdminActions;
     private javax.swing.JPanel pnlMainScreen;
     private javax.swing.JPanel pnlMainScreenTitleBar;
+    private javax.swing.JPanel pnlRecent;
+    private javax.swing.JPanel pnlRocketForm;
+    private javax.swing.JPanel pnlSearch;
+    private javax.swing.JPanel pnlSort;
+    private javax.swing.JPanel pnlStats;
     private javax.swing.JPanel pnlTabAboutUs;
     private javax.swing.JPanel pnlTabAdminControl;
     private javax.swing.JPanel pnlTabHome;
     private javax.swing.JPanel pnlTabRocketList;
+    private javax.swing.JLabel rocketAdminPanel;
+    private javax.swing.JLabel rocketID;
+    private javax.swing.JLabel rocketName;
+    private javax.swing.JScrollPane scrollRockets;
+    private javax.swing.JLabel status;
     private javax.swing.JTabbedPane tabPaneMain;
+    private javax.swing.JTable tblRockets;
+    private javax.swing.JLabel thrust;
+    private javax.swing.JTextField txtCountry;
+    private javax.swing.JTextField txtLaunchYear;
+    private javax.swing.JTextField txtMass;
+    private javax.swing.JTextField txtRocketID;
+    private javax.swing.JTextField txtRocketName;
+    private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtThrust;
     // End of variables declaration//GEN-END:variables
 }
