@@ -4,6 +4,9 @@
  */
 package view;
 import controller.AuthController;
+import controller.RocketController;
+import view.AdminDashboardFrame;
+
 
 /**
  *
@@ -49,7 +52,6 @@ public class WelcomeFrame extends javax.swing.JFrame {
         brandingPanel.setBackground(new java.awt.Color(11, 19, 43));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/nepal_aerospace_logo_big.png"))); // NOI18N
-        lblLogo.setText("jLabel2");
 
         javax.swing.GroupLayout brandingPanelLayout = new javax.swing.GroupLayout(brandingPanel);
         brandingPanel.setLayout(brandingPanelLayout);
@@ -203,26 +205,59 @@ public class WelcomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_signupHereMouseClicked
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String emailInput = emailTextField.getText();
-        String passwordInput = passwordTextField.getText();
+                                      
+    String emailInput = emailTextField.getText().trim();
+    String passwordInput = passwordTextField.getText().trim();
 
-        AuthController authController = new AuthController();
+    // Basic validation (clear messages)
+    if (emailInput.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Email cannot be empty.",
+            "Validation Error",
+            javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+        return;
+    }
 
-if (authController.login(emailInput, passwordInput)) {
-    javax.swing.JOptionPane.showMessageDialog(
-        this,
-        "Login successful!",
-        "Success",
-        javax.swing.JOptionPane.INFORMATION_MESSAGE
-    );
-} else {
-    javax.swing.JOptionPane.showMessageDialog(
-        this,
-        "Invalid email or password",
-        "Login Failed",
-        javax.swing.JOptionPane.ERROR_MESSAGE
-    );
-}
+    if (passwordInput.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Password cannot be empty.",
+            "Validation Error",
+            javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+        return;
+    }
+
+    AuthController authController = new AuthController();
+
+    if (authController.login(emailInput, passwordInput)) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Login successful!",
+            "Success",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+
+        // Open dashboard + wire RocketController (MVC)
+        AdminDashboardFrame dashboard = new AdminDashboardFrame();
+        new RocketController(dashboard);
+        dashboard.setLocationRelativeTo(null);
+        dashboard.setVisible(true);
+
+        // Close WelcomeFrame
+        this.dispose();
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Invalid email or password",
+            "Login Failed",
+            javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+    }
+
 
     }//GEN-LAST:event_loginActionPerformed
 
