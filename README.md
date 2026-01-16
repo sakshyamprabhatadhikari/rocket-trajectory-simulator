@@ -6,5 +6,4 @@ The Rocket Trajectory Simulator is a Java Swing–based desktop application deve
 4. Log in using:
    - Email: `admin@nepalaerospace.com`
    - Password: `admin123`
-   - 
 ## Developed by Sakshyam Prabhat Adhikari
